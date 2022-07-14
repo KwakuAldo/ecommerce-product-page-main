@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="css/main.css">
+  <title>Frontend Mentor | E-commerce product page</title>
+
+  <!-- Feel free to remove these styles or customize in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body class="font-body">
+  <main class="bg-white">
+    <div class="container mx-auto">
+      <!--Navbar-->
+      <nav class="relative p-5 mt-2">
+        <div class="flex justify-between">
+          
+          <div class="flex space-x-10">
+            <!--Logo-->
+            <div>
+              <a href="#">
+                <img src="images/logo.svg" class="ml-4" alt="">
+              </a>
+            </div>
+            <!--Menu Items-->
+            <div class="hidden space-x-4 lg:flex">
+              <a href="#" class="text-grayishBlue hover:text-black hover:decoration-underline">Collections</a>
+              <a href="#" class="text-grayishBlue hover:text-black">Men</a>
+              <a href="#" class="text-grayishBlue hover:text-black">Women</a>
+              <a href="#" class="text-grayishBlue hover:text-black">About</a>
+              <a href="#" class="text-grayishBlue hover:text-black">Contact</a>
+            </div>
+          </div>
+          <div class="flex justify-around w-20 h-5">
+            <a href="#">
+              <img src="images/icon-cart.svg" alt="cart icon">
+            </a>
+            <a href="#">
+              <img src="images/image-avatar.png" class="h-full" alt="avatar image">
+            </a>
+          </div>
+        </div>
+        <!--Mobile Nav -->
+        <div class="flex justify-between h-fit">
+          <div class="flex items-start h-fit">
+            <!--Hamburger Icon-->
+            <button id="menu" class="block hamburger mt-1 lg:hidden">
+              <img src="images/icon-menu.svg" alt="hamburger icon">
+            </button>
+            
+            <!--Hamburger Menu-->
+          </div>
+          
+        </div>
+      
+      </nav>
+
+      <!--Images carousel -->
+      <div>
+        <img src="images/image-product-1.jpg" alt="sneaker 1 image">
+      </div>
+    </div>
+    
+    <section class="container mx-auto" id="hero">
+      <div class="flex-col p-6 space-y-3">
+        <h2 class="text-orange text-bold text-xm">SNEAKER COMPANY</h2>
+        <h1 class="text-veryDarkBlue font-bold text-4xl">Fall Limited Edition Sneakers</h1>
+        <p class="text-darkGrayishBlue">These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer. </p>
+      </div>
+    </section>
+    <!--Price and Buttons-->
+    <section>
+      <div class="container mx-auto p-6 space-y-3">
+        <div class="flex justify-between">
+          <div class="flex w-full justify-between items-center">
+            <div class="flex justify-between items-center space-x-5">
+              <h3 class="text-veryDarkBlue text-4xl font-bold">$125.00</h3>
+              <p class="bg-paleOrange text-xl font-bold text-center text-orange w-[3.4375rem] h-8 block rounded">50%</p>
+            </div>
+            <h3 class="text-darkGrayishBlue text-lg line-through font-bold">$250.00</h3>
+          </div>
+        </div>
+
+        <!--Buttons-->
+        <div class="flex justify-between items-center mx-auto p-6 bg-lightGrayishBlue rounded h-14">
+          <div>
+            <button>
+              <img src="images/icon-minus.svg" alt="minus icon">
+            </button>
+          </div>
+          <span class="text-md font-bold text-veryDarkBlue">0</span>
+          <div>
+            <button>
+              <img src="images/icon-plus.svg" alt="plus icon">
+            </button>
+          </div>
+        </div>
+        <div class="container mx-auto bg-orange rounded h-14">
+          <button class="text-white rounded shadow-2xl w-full h-full">
+            <div class="flex justify-center items-center">
+              <img src="images/icon-cart.svg" class="mr-4  filter-white" alt="cart icon">
+              <h3 class="font-bold text-md">Add to cart</h3>
+            </div>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://github.com/KwakuAldo">Aldo Adabunu</a>.
+  </div>
+</body>
+</html>
