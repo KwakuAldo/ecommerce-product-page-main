@@ -18,41 +18,43 @@
   <main class="bg-white">
     <div class="container mx-auto">
       <!--Navbar-->
-      <nav class="relative p-5 mt-2">
-        <div class="flex justify-between">
+      <nav class="relative flex p-5 w-full mt-2 lg:h-28 lg:mt-5">
+        <div class="flex justify-between lg:items-center w-full">
           
           <div class="flex space-x-10">
-            <!--Logo-->
-            <div>
-              <a href="#">
-                <img src="images/logo.svg" class="ml-4" alt="">
-              </a>
+            <div class="flex">
+              <!--Hamburger Icon-->
+              <button id="menu" class="block hamburger mt-1 lg:hidden">
+                <img src="images/icon-menu.svg" alt="hamburger icon">
+              </button>
+              <!--Logo-->
+              <div>
+                <a href="#">
+                  <img src="images/logo.svg" class="ml-4" alt="">
+                </a>
+              </div>
             </div>
             <!--Menu Items-->
             <div class="hidden space-x-4 lg:flex">
-              <a href="#" class="text-grayishBlue hover:text-black hover:decoration-underline">Collections</a>
-              <a href="#" class="text-grayishBlue hover:text-black">Men</a>
-              <a href="#" class="text-grayishBlue hover:text-black">Women</a>
-              <a href="#" class="text-grayishBlue hover:text-black">About</a>
-              <a href="#" class="text-grayishBlue hover:text-black">Contact</a>
+              <a href="#" class="text-grayishBlue hover:text-veryDarkBlue">Collections</a>
+              <a href="#" class="text-grayishBlue hover:text-veryDarkBlue">Men</a>
+              <a href="#" class="text-grayishBlue hover:text-veryDarkBlue">Women</a>
+              <a href="#" class="text-grayishBlue hover:text-veryDarkBlue">About</a>
+              <a href="#" class="text-grayishBlue hover:text-veryDarkBlue">Contact</a>
             </div>
           </div>
-          <div class="flex justify-around w-20 h-5">
+          <div class="flex justify-around w-20 h-5 ml-60 lg:w-40 lg:h-full">
             <a href="#">
               <img src="images/icon-cart.svg" alt="cart icon">
             </a>
-            <a href="#">
-              <img src="images/image-avatar.png" class="h-full" alt="avatar image">
+            <a href="#" class="ml-7">
+              <img src="images/image-avatar.png" class="h-full lg:h-14" alt="avatar image">
             </a>
           </div>
         </div>
         <!--Mobile Nav -->
-        <div class="flex justify-between h-fit">
+        <div class="flex justify-between h-fit lg:hidden">
           <div class="flex items-start h-fit">
-            <!--Hamburger Icon-->
-            <button id="menu" class="block hamburger mt-1 lg:hidden">
-              <img src="images/icon-menu.svg" alt="hamburger icon">
-            </button>
             
             <!--Hamburger Menu-->
           </div>
