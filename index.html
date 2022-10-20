@@ -54,8 +54,8 @@
         </div>
         <!--Mobile Nav -->
         <div class="lg:hidden">
-          <div id="menu" class="absolute flex-col w-2/3 h-screen pl-5 right-40 space-y-10 bg-white hidden">
-            <button id="close-btn" class="ml-10 w-3.5">
+          <div id="menu" class="absolute flex-col w-2/3 h-screen right-40 space-y-10 bg-white hidden">
+            <button id="close-btn" class="ml-11 w-4">
               <img src="images/icon-close.svg" alt="close-icon">
             </button>
             <div class="flex flex-col ml-10 space-y-5">
@@ -116,12 +116,12 @@
             <!--Buttons-->
             <div class="flex flex-col lg:flex-row w-full space-y-3 lg:space-y-0 md:space-x-0 lg:space-x-3">
               <div class="flex justify-between items-center lg:w-[10rem]  p-6 bg-lightGrayishBlue rounded h-14">
-                <button>
+                <button id="remove-btn">
                   <img src="images/icon-minus.svg" alt="minus icon">
                 </button>
-                <span class="text-md font-bold text-veryDarkBlue">0</span>
+                <span id="item-quantity" class="text-md font-bold text-veryDarkBlue">0</span>
                 <div>
-                  <button>
+                  <button id="add-btn">
                     <img src="images/icon-plus.svg" alt="plus icon">
                   </button>
                 </div>
