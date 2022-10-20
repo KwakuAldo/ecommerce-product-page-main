@@ -3,6 +3,7 @@ const nav = document.getElementById('menu');
 const closeBtn = document.getElementById('close-btn');
 const addBtn = document.getElementById('add-btn');
 const removeBtn = document.getElementById('remove-btn');
+const cartBtn = document.getElementById('cart-btn');
 let itemQty = document.getElementById('item-quantity');
 let count = 0;
 
@@ -26,4 +27,8 @@ removeBtn.addEventListener('click', () => {
     count -= 1;
     itemQty.innerText = count;
     console.log('minus 1')
+})
+
+cartBtn.addEventListener('click', () => {
+    
 })

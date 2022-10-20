@@ -76,6 +76,14 @@
       <!--Images carousel -->
       <div class="lg:w-1/2">
         <img class="md:rounded-lg md:w-[24.438rem]" src="images/image-product-1.jpg" alt="sneaker 1 image">
+        <div class="absolute flex justify-between">
+          <button>
+            <img src="images/icon-previous.svg" alt="">
+          </button>
+          <button>
+            <img src="images/icon-next.svg" alt="">
+          </button>
+        </div>
         <div class="md:flex flex-row mt-5 space-x-5 md:w-[24.438rem] hidden">
           <div>
             <img class="rounded-lg" src="images/image-product-1-thumbnail.jpg" alt="">
@@ -127,7 +135,7 @@
                 </div>
               </div>
               <div class="container mx-auto lg:w-[17.188rem] bg-orange rounded h-14">
-                <button class="text-white rounded shadow-2xl w-full h-full">
+                <button id="cart-btn" class="text-white rounded shadow-2xl w-full h-full">
                   <div class="flex justify-center items-center">
                     <img src="images/icon-cart.svg" class="mr-4  filter-white" alt="cart icon">
                     <h3 class="font-bold text-md">Add to cart</h3>
