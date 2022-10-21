@@ -25,8 +25,12 @@ addBtn.addEventListener('click', () => {
 
 removeBtn.addEventListener('click', () => {
     count -= 1;
+    if (count < 0) {
+    count = 0;
+    }
     itemQty.innerText = count;
     console.log('minus 1')
+    
 })
 
 cartBtn.addEventListener('click', () => {
