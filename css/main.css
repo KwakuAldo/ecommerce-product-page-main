@@ -1,5 +1,6 @@
 /*
 ! tailwindcss v3.2.4 | MIT License | https://tailwindcss.com
+! tailwindcss v3.2.4 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -610,12 +611,8 @@ video {
   margin-right: 1rem;
 }
 
-.ml-\[15rem\] {
-  margin-left: 15rem;
-}
-
-.ml-\[10rem\] {
-  margin-left: 10rem;
+.ml-11 {
+  margin-left: 2.75rem;
 }
 
 .block {
@@ -893,8 +890,8 @@ video {
     width: 91.666667%;
   }
 
-  .md\:w-full {
-    width: 100%;
+  .md\:w-\[24\.438rem\] {
+    width: 24.438rem;
   }
 
   .md\:w-1\/2 {
