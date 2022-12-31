@@ -54,7 +54,7 @@
         </div>
         <!--Mobile Nav -->
         <div class="lg:hidden">
-          <div id="menu" class="absolute z-10 flex-col w-2/3 h-screen right-40 space-y-10 bg-white hidden border-2 border-solid border-black shadow-lg">
+          <div id="menu" class="absolute flex-col w-2/3 h-screen right-40 space-y-10 bg-white hidden">
             <button id="close-btn" class="ml-11 w-4">
               <img src="images/icon-close.svg" alt="close-icon">
             </button>
@@ -74,58 +74,59 @@
     
     <section class="container relative mx-auto md:flex md:flex-row md:w-11/12 lg:p-5 md:mt-10 lg:mt-8" id="hero">
       <!--Images carousel -->
-      <div class="lg:w-[36rem] md:h-[30.125rem]">
-        <div class="relative slide-container max-w-5xl h-[23rem] md:h-[30.125rem] overflow-hidden">
-          <div class="slide absolute">
-            <img class="md:rounded-lg md:w-[30rem]" src="images/image-product-1.jpg" alt="sneaker 1 image">
+      <div class="flex h-[40rem]">
+        <div class="lg:w-1/2">
+          <div class="slider sm:overflow-hidden relative h-full">
+            <div class="slide absolute h-max">
+              <img class="md:rounded-lg w-full h-full" src="images/image-product-1.jpg" alt="sneaker 1 image">
+            </div>
+            <div class="slide absolute w-full h-full">
+              <img class="md:rounded-lg" src="images/image-product-2.jpg" alt="sneaker 2 image">
+            </div>
+            <div class="slide absolute w-full h-full">
+              <img class="md:rounded-lg" src="images/image-product-3.jpg" alt="sneaker 3 image">
+            </div>
+            <div class="slide absolute w-full h-full">
+              <img class="md:rounded-lg" src="images/image-product-4.jpg" alt="sneaker 4 image">
+            </div>
+            <div class="flex justify-between">
+              <button class="btn-prev absolute top-[11.5rem]">
+                <img src="images/icon-previous.svg" alt="">
+              </button>
+              <button class="btn-next absolute top-[11.5rem] right-0">
+                <img src="images/icon-next.svg" alt="">
+              </button>
+            </div>
           </div>
-          <div class="slide absolute md:invisible">
-            <img class="md:rounded-lg md:w-[30rem]" src="images/image-product-2.jpg" alt="sneaker 2 image">
-          </div>
-          <div class="slide absolute md:invisible">
-            <img class="md:rounded-lg md:w-[30rem]" src="images/image-product-3.jpg" alt="sneaker 3 image">
-          </div>
-          <div class="slide absolute md:invisible">
-            <img class="md:rounded-lg md:w-[30rem]" src="images/image-product-4.jpg" alt="sneaker 4 image">
-          </div>
-          <div class="lg:hidden justify-between">
-            <button class="btn-prev absolute flex items-center justify-center top-[10rem] left-[1rem] w-[2rem] h-[2rem] rounded-full bg-white">
-              <img class="h-fit" src="images/icon-previous.svg" alt="">
-            </button>
-            <button class="btn-next absolute flex items-center justify-center top-[10rem] right-[1rem] w-[2rem] h-[2rem] rounded-full bg-white">
-              <img class="h-fit" src="images/icon-next.svg" alt="">
-            </button>
+          <div class="relative top-[2rem] md:flex flex-row space-x-5 hidden">
+            <div>
+              <img class="rounded-lg" src="images/image-product-1-thumbnail.jpg" alt="">
+            </div>
+            <div>
+              <img class="rounded-lg" src="images/image-product-2-thumbnail.jpg" alt="">
+            </div>
+            <div>
+              <img class="rounded-lg" src="images/image-product-3-thumbnail.jpg" alt="">
+            </div>
+            <div>
+              <img class="rounded-lg" src="images/image-product-4-thumbnail.jpg" alt="">
+            </div>
           </div>
         </div>
-        
-        <div class="relative md:flex flex-row mt-5 space-x-5 md:w-[30rem] hidden">
-          <div>
-            <a href=""><img class="rounded-lg hover:border-2 hover:border-solid hover:border-orange hover:bg-black hover:opacity-75 active:bg-black active:opacity-50" src="images/image-product-1-thumbnail.jpg" alt=""></a>
-          </div>
-          <div>
-          <a href=""><img class="rounded-lg hover:border-2 hover:border-solid hover:border-orange hover:bg-black hover:opacity-75" src="images/image-product-2-thumbnail.jpg" alt=""></a>
-          </div>
-          <div>
-          <a href=""><img class="rounded-lg hover:border-2 hover:border-solid hover:border-orange hover:bg-black hover:opacity-75" src="images/image-product-3-thumbnail.jpg" alt=""></a>
-          </div>
-          <div>
-          <a href=""><img class="rounded-lg hover:border-2 hover:border-solid hover:border-orange hover:bg-black hover:opacity-75" src="images/image-product-4-thumbnail.jpg" alt=""></a>
-          </div>
-        </div>
-      </div>
-      <div class="relative md:top-auto md:w-1/2">
-        <div class="flex-col p-6 sm:p-0 md:pl-7 md:mt-[5rem] md:space-y-3">
-          <div class="md:w[18rem] lg:w-[30rem]">
-            <h2 class="text-orange text-bold text-xm mb-3">SNEAKER COMPANY</h2>
-            <h1 class="text-veryDarkBlue font-bold text-4xl mb-5">Fall Limited Edition Sneakers</h1>
-            <p class="text-darkGrayishBlue mb-5">These low-profile sneakers are your perfect casual wear companion. Featuring a
-              durable
-              rubber outer sole, they'll withstand everything the weather can offer. </p>
-          </div>
+        <div class="relative top-[25rem] md:w-1/2 md:static">
+          <div class="flex-col p-6 sm:p-0 md:ml[10rem] md:mt-16 md:space-y-3">
+            <div class="md:w[18rem] lg:w-[30rem]">
+              <h2 class="text-orange text-bold text-xm mb-3">SNEAKER COMPANY</h2>
+              <h1 class="text-veryDarkBlue font-bold text-4xl mb-5">Fall Limited Edition Sneakers</h1>
+              <p class="text-darkGrayishBlue mb-5">These low-profile sneakers are your perfect casual wear companion. Featuring
+                a
+                durable
+                rubber outer sole, they'll withstand everything the weather can offer. </p>
+            </div>
         
             <!--Price and Buttons-->
             <div class="container mx-auto md:space-y-3">
-              <div class="flex justify-between my-[2rem]">
+              <div class="flex justify-between mb-5">
                 <div class="flex lg:flex-col w-full justify-between items-center lg:items-start">
                   <div class="flex justify-between items-center space-x-5">
                     <h3 class="text-veryDarkBlue text-4xl font-bold">$125.00</h3>
@@ -166,7 +167,8 @@
     </div>
   </main>
   
-  <div class="attribution relative md:top-[10rem]">
+  
+  <div class="attribution relative top-[24rem]">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="https://github.com/KwakuAldo">Aldo Adabunu</a>.
   </div>
