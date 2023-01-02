@@ -11,6 +11,11 @@ let curSlide = 0
 const nextSlide = document.querySelector('.btn-next');
 const prevSlide = document.querySelector('.btn-prev');
 let maxSlide = slides.length -1
+const lightBox = document.querySelector('#lightBox')
+const lightBoxSlides = document.querySelectorAll('.slide img')
+const lightboxImage = lightBox.querySelector("img");
+const lightBoxBtnClose = lightBox.querySelector('.light-box-close')
+const thumbNail = document.querySelectorAll('.thumbnail img')
 
 
 menuBtn.addEventListener('click', () => {
@@ -71,3 +76,18 @@ prevSlide.addEventListener('click', function () {
         slider.style.transform = `translateX(${100 * (indx - curSlide)}%)`
     })
 })
+
+// show lightbox when image is clicked
+function showLightbox(event) {
+    lightboxImage.src = event.target.src;
+    lightBox.classList.toggle("show");
+}
+
+// hide lightbox when close button is clicked
+function hideLightbox() {
+    lightBox.classList.toggle("show");
+}
+
+slides.forEach(slide => slide.addEventListener("click", showLightbox));
+thumbNail.forEach(thumbnail => thumbnail.addEventListener("click", showLightbox));
+lightBoxBtnClose.addEventListener("click", hideLightbox);

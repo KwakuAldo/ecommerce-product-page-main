@@ -5,3 +5,75 @@
 .filter-white {
     filter:brightness(0) saturate(100%) invert(92%) sepia(59%) saturate(2%) hue-rotate(299deg) brightness(115%) contrast(101%);
 }
+
+/* lightbox container */
+#lightBox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  display: none;
+}
+
+#lightBox.show {
+    display: block;
+}
+
+/* lightbox image */
+#lightBox img:not(#lbCloseBtn) {
+  max-width: 90%;
+  max-height: 70%;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+/* close button */
+#lightBox .light-box-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 2rem;
+  height: 2rem;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+#lightBox .light-box-close img {
+  width: 100%;
+  height: 100%;
+}
+
+/* hide lightbox by default */
+/* #lightBox.hidden {
+  visibility: hidden;
+} */
+
+/* show lightbox when image is clicked */
+#lightBox:target {
+  visibility: visible;
+}
+
+/* hide lightbox when close button is clicked */
+#lightBox:target .light-box-close {
+  visibility: hidden;
+}
+
+/* add lightbox effect to current image elements */
+.slide img,
+.thumbnail img {
+  cursor: pointer;
+}
+
+#lightBox img#lbCloseBtn {
+    position: absolute;
+    top: 60px;
+    left: -485px;
+}

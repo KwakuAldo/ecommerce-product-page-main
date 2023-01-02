@@ -75,6 +75,8 @@
     <section class="container relative mx-auto md:flex md:flex-row md:w-11/12 lg:p-5 md:mt-10 lg:mt-8" id="hero">
       <!--Images carousel -->
       <div class="lg:w-[36rem] md:h-[30.125rem]">
+
+        
         <div class="relative slide-container max-w-5xl h-[23rem] md:h-[30.125rem] overflow-hidden">
           <div class="slide absolute">
             <img class="md:rounded-lg md:w-[30rem]" src="images/image-product-1.jpg" alt="sneaker 1 image">
@@ -88,11 +90,22 @@
           <div class="slide absolute md:invisible">
             <img class="md:rounded-lg md:w-[30rem]" src="images/image-product-4.jpg" alt="sneaker 4 image">
           </div>
+          
+        </div>
+
+        <!--Lightbox Container-->
+        <div id="lightBox">
+          <img src="" alt="">
+          <button class="light-box-close">
+            <img id="lbCloseBtn" src="images/icon-close.svg" alt="close-icon">
+          </button>
           <div class="lg:hidden justify-between">
-            <button class="btn-prev absolute flex items-center justify-center top-[10rem] left-[1rem] w-[2rem] h-[2rem] rounded-full bg-white">
+            <button
+              class="btn-prev absolute flex items-center justify-center top-[10rem] left-[1rem] w-[2rem] h-[2rem] rounded-full bg-white">
               <img class="h-fit" src="images/icon-previous.svg" alt="">
             </button>
-            <button class="btn-next absolute flex items-center justify-center top-[10rem] right-[1rem] w-[2rem] h-[2rem] rounded-full bg-white">
+            <button
+              class="btn-next absolute flex items-center justify-center top-[10rem] right-[1rem] w-[2rem] h-[2rem] rounded-full bg-white">
               <img class="h-fit" src="images/icon-next.svg" alt="">
             </button>
           </div>
@@ -100,16 +113,16 @@
         
         <div class="relative md:flex flex-row mt-5 space-x-5 md:w-[30rem] hidden">
           <div>
-            <a href=""><img class="rounded-lg hover:border-2 hover:border-solid hover:border-orange hover:bg-black hover:opacity-75 active:bg-black active:opacity-50" src="images/image-product-1-thumbnail.jpg" alt=""></a>
+            <a href=""><img class="thumbnail rounded-lg hover:border-2 hover:border-solid hover:border-orange hover:bg-black hover:opacity-75 active:bg-black active:opacity-50" src="images/image-product-1-thumbnail.jpg" alt=""></a>
           </div>
           <div>
-          <a href=""><img class="rounded-lg hover:border-2 hover:border-solid hover:border-orange hover:bg-black hover:opacity-75" src="images/image-product-2-thumbnail.jpg" alt=""></a>
+          <a href=""><img class="thumbnail rounded-lg hover:border-2 hover:border-solid hover:border-orange hover:bg-black hover:opacity-75" src="images/image-product-2-thumbnail.jpg" alt=""></a>
           </div>
           <div>
-          <a href=""><img class="rounded-lg hover:border-2 hover:border-solid hover:border-orange hover:bg-black hover:opacity-75" src="images/image-product-3-thumbnail.jpg" alt=""></a>
+          <a href=""><img class="thumbnail rounded-lg hover:border-2 hover:border-solid hover:border-orange hover:bg-black hover:opacity-75" src="images/image-product-3-thumbnail.jpg" alt=""></a>
           </div>
           <div>
-          <a href=""><img class="rounded-lg hover:border-2 hover:border-solid hover:border-orange hover:bg-black hover:opacity-75" src="images/image-product-4-thumbnail.jpg" alt=""></a>
+          <a href=""><img class="thumbnail rounded-lg hover:border-2 hover:border-solid hover:border-orange hover:bg-black hover:opacity-75" src="images/image-product-4-thumbnail.jpg" alt=""></a>
           </div>
         </div>
       </div>
