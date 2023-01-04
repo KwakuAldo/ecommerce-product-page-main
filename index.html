@@ -7,7 +7,16 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="css/main.css">
   <title>Frontend Mentor | E-commerce product page</title>
+<!-- <script>
+  function changeImage(imageUrl) {
+    document.getElementById('current-image').src = imageUrl;
+    document.getElementById('current-lightbox-image').src = imageUrl
+  }
 
+  window.addEventListener('load', function () {
+    // your code here
+  });
+</script> -->
   <!-- Feel free to remove these styles or customize in your own stylesheet 👍 -->
   <style>
     .attribution { font-size: 11px; text-align: center; }
@@ -77,28 +86,19 @@
       <div class="lg:w-[36rem] md:h-[30.125rem]">
 
         
-        <div class="relative slide-container max-w-5xl h-[23rem] md:h-[30.125rem] overflow-hidden">
+        <div class="relative slide-container max-w-5xl h-[23rem] md:h-[30.125rem] overflow-hidden md:mx-[3rem]">
           <div class="slide absolute">
-            <img class="md:rounded-lg md:w-[30rem]" src="images/image-product-1.jpg" alt="sneaker 1 image">
+            <img id="current-image" class="product-images md:rounded-lg md:w-[30rem]" src="images/image-product-1.jpg" alt="sneaker 1 image">
           </div>
-          <div class="slide absolute md:invisible">
-            <img class="md:rounded-lg md:w-[30rem]" src="images/image-product-2.jpg" alt="sneaker 2 image">
+          <div class="slide absolute">
+            <img class="product-images md:rounded-lg md:w-[30rem]" src="images/image-product-2.jpg" alt="sneaker 2 image">
           </div>
-          <div class="slide absolute md:invisible">
-            <img class="md:rounded-lg md:w-[30rem]" src="images/image-product-3.jpg" alt="sneaker 3 image">
+          <div class="slide absolute">
+            <img class="product-images md:rounded-lg md:w-[30rem]" src="images/image-product-3.jpg" alt="sneaker 3 image">
           </div>
-          <div class="slide absolute md:invisible">
-            <img class="md:rounded-lg md:w-[30rem]" src="images/image-product-4.jpg" alt="sneaker 4 image">
+          <div class="slide absolute">
+            <img class="product-images md:rounded-lg md:w-[30rem]" src="images/image-product-4.jpg" alt="sneaker 4 image">
           </div>
-          
-        </div>
-
-        <!--Lightbox Container-->
-        <div id="lightBox">
-          <img src="" alt="">
-          <button class="light-box-close">
-            <img id="lbCloseBtn" src="images/icon-close.svg" alt="close-icon">
-          </button>
           <div class="lg:hidden justify-between">
             <button
               class="btn-prev absolute flex items-center justify-center top-[10rem] left-[1rem] w-[2rem] h-[2rem] rounded-full bg-white">
@@ -110,19 +110,64 @@
             </button>
           </div>
         </div>
+
+        <!--Lightbox Container-->
+        <div id="lightBox">
+          <div class="flex flex-col">
+            <div>
+              <img id="current-lightbox-image" class="light-box-img rounded-lg" src="" alt="">
+            </div>
+            
+          </div>
+          <button id="lbCloseBtn" class="light-box-close">
+            <img class="filter-white" src="images/icon-close.svg" alt="close-icon">
+          </button>
+          <div class="justify-between">
+            <button id="prev-btn"
+              class="btn-prev absolute flex items-center justify-center top-[23rem] left-[30rem] w-[2rem] h-[2rem] rounded-full bg-white">
+              <img class="h-fit" src="images/icon-previous.svg" alt="">
+            </button>
+            <button  id="next-btn"
+              class="btn-next absolute flex items-center justify-center top-[23rem] right-[30rem] w-[2rem] h-[2rem] rounded-full bg-white">
+              <img class="h-fit" src="images/icon-next.svg" alt="">
+            </button>
+          </div>
+          <div class="relative top-[42rem] left-[33rem] md:flex flex-row justify-center space-x-5 md:w-[30rem]">
+            <div class="h-[5rem]">
+              <a href="javascript:void(0)" class="lbt-link" onclick="changeImage('images/image-product-1.jpg', 'images/image-product-1.jpg')"><img
+                  class="w-[5rem] light-box-thumbnails thumbnail rounded-lg hover:border-2 hover:border-solid hover:border-orange hover:bg-black hover:opacity-75 active:bg-black active:opacity-50"
+                  src="images/image-product-1-thumbnail.jpg" alt=""></a>
+            </div>
+            <div class="h-[5rem]">
+              <a href="javascript:void(0)" class="lbt-link" onclick="changeImage('images/image-product-2.jpg', 'images/image-product-2.jpg')"><img
+                  class="w-[5rem] light-box-thumbnails thumbnail rounded-lg hover:border-2 hover:border-solid hover:border-orange hover:bg-black hover:opacity-75 active:bg-black active:opacity-50"
+                  src="images/image-product-2-thumbnail.jpg" alt=""></a>
+            </div>
+            <div class="h-[5rem]">
+              <a href="javascript:void(0)" class="lbt-link" onclick="changeImage('images/image-product-3.jpg', 'images/image-product-3.jpg')"><img
+                  class="w-[5rem] light-box-thumbnails thumbnail rounded-lg hover:border-2 hover:border-solid hover:border-orange hover:bg-black hover:opacity-75 active:bg-black active:opacity-50"
+                  src="images/image-product-3-thumbnail.jpg" alt=""></a>
+            </div>
+            <div class="h-[5rem]">
+              <a href="javascript:void(0)" class="lbt-link" onclick="changeImage('images/image-product-4.jpg', 'images/image-product-4.jpg')"><img
+                  class="w-[5rem] light-box-thumbnails thumbnail rounded-lg hover:border-2 hover:border-solid hover:border-orange hover:bg-black hover:opacity-75 active:bg-black active:opacity-50"
+                  src="images/image-product-4-thumbnail.jpg" alt=""></a>
+            </div>
+          </div>
+        </div>
         
-        <div class="relative md:flex flex-row mt-5 space-x-5 md:w-[30rem] hidden">
+        <div class="relative md:flex flex-row mt-5 space-x-5 md:w-[30rem] mx-[3rem] hidden">
           <div>
-            <a href=""><img class="thumbnail rounded-lg hover:border-2 hover:border-solid hover:border-orange hover:bg-black hover:opacity-75 active:bg-black active:opacity-50" src="images/image-product-1-thumbnail.jpg" alt=""></a>
+            <a href="javascript:void(0)" onclick="changeImage('images/image-product-1.jpg')"><img class="thumbnail rounded-lg hover:border-2 hover:border-solid hover:border-orange hover:bg-black hover:opacity-75 active:bg-black active:opacity-50" src="images/image-product-1-thumbnail.jpg" alt=""></a>
           </div>
           <div>
-          <a href=""><img class="thumbnail rounded-lg hover:border-2 hover:border-solid hover:border-orange hover:bg-black hover:opacity-75" src="images/image-product-2-thumbnail.jpg" alt=""></a>
+          <a href="javascript:void(0)" onclick="changeImage('images/image-product-2.jpg')"><img class="thumbnail rounded-lg hover:border-2 hover:border-solid hover:border-orange hover:bg-black hover:opacity-75" src="images/image-product-2-thumbnail.jpg" alt=""></a>
           </div>
           <div>
-          <a href=""><img class="thumbnail rounded-lg hover:border-2 hover:border-solid hover:border-orange hover:bg-black hover:opacity-75" src="images/image-product-3-thumbnail.jpg" alt=""></a>
+          <a href="javascript:void(0)" onclick="changeImage('images/image-product-3.jpg')"><img class="thumbnail rounded-lg hover:border-2 hover:border-solid hover:border-orange hover:bg-black hover:opacity-75" src="images/image-product-3-thumbnail.jpg" alt=""></a>
           </div>
           <div>
-          <a href=""><img class="thumbnail rounded-lg hover:border-2 hover:border-solid hover:border-orange hover:bg-black hover:opacity-75" src="images/image-product-4-thumbnail.jpg" alt=""></a>
+          <a href="javascript:void(0)" onclick="changeImage('images/image-product-4.jpg')"><img class="thumbnail rounded-lg hover:border-2 hover:border-solid hover:border-orange hover:bg-black hover:opacity-75" src="images/image-product-4-thumbnail.jpg" alt=""></a>
           </div>
         </div>
       </div>
@@ -164,7 +209,7 @@
                 <div class="container mx-auto lg:w-[17.188rem] bg-orange rounded h-14">
                   <button id="cart-btn" class="text-white rounded shadow-2xl w-full h-full">
                     <div class="flex justify-center items-center">
-                      <img src="images/icon-cart.svg" class="mr-4  filter-white" alt="cart icon">
+                      <img src="images/icon-cart.svg" class="mr-4 filter-white" alt="cart icon">
                       <h3 class="font-bold text-md">Add to cart</h3>
                     </div>
                   </button>
@@ -175,7 +220,6 @@
         </div>
       </div>
     </section>
-    
     </div>
   </main>
   
@@ -183,6 +227,8 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="https://github.com/KwakuAldo">Aldo Adabunu</a>.
   </div>
+  
   <script src="script/index.js"></script>
+  
 </body>
 </html>

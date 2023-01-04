@@ -23,9 +23,9 @@
 }
 
 /* lightbox image */
-#lightBox img:not(#lbCloseBtn) {
+#lightBox img:not(#lbCloseBtn img, .thumbnail) {
   max-width: 90%;
-  max-height: 70%;
+  max-height: 65%;
   margin: auto;
   position: absolute;
   top: 0;
@@ -47,8 +47,8 @@
 }
 
 #lightBox .light-box-close img {
-  width: 100%;
-  height: 100%;
+  width: 70%;
+  height: 70%;
 }
 
 /* hide lightbox by default */
@@ -72,8 +72,12 @@
   cursor: pointer;
 }
 
-#lightBox img#lbCloseBtn {
+#lightBox #lbCloseBtn {
     position: absolute;
-    top: 60px;
-    left: -485px;
+    top: 5rem;
+    left: 61.875rem;
+}
+
+.visible {
+  display: flex;
 }
