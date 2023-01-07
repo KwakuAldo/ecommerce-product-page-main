@@ -6,7 +6,8 @@
     filter:brightness(0) saturate(100%) invert(92%) sepia(59%) saturate(2%) hue-rotate(299deg) brightness(115%) contrast(101%);
 }
 
-/* lightbox container */
+@media only screen and (min-width:64rem) {
+  /* lightbox container */
 #lightBox {
   position: fixed;
   top: 0;
@@ -19,7 +20,7 @@
 }
 
 #lightBox.show {
-    display: block;
+    display: flex;
 }
 
 /* lightbox image */
@@ -37,8 +38,6 @@
 /* close button */
 #lightBox .light-box-close {
   position: absolute;
-  top: 0.5rem;
-  right: 0.5rem;
   width: 2rem;
   height: 2rem;
   background-color: transparent;
@@ -74,10 +73,10 @@
 
 #lightBox #lbCloseBtn {
     position: absolute;
-    top: 5rem;
-    left: 61.875rem;
 }
 
-.visible {
-  display: flex;
 }
+
+/* .visible {
+  display: flex;
+} */

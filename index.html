@@ -7,16 +7,16 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="css/main.css">
   <title>Frontend Mentor | E-commerce product page</title>
-<!-- <script>
-  function changeImage(imageUrl) {
-    document.getElementById('current-image').src = imageUrl;
-    document.getElementById('current-lightbox-image').src = imageUrl
-  }
+<script>
+  // function changeImage(imageUrl) {
+  //   document.getElementById('current-image').src = imageUrl;
+  //   document.getElementById('current-lightbox-image').src = imageUrl
+  // }
 
   window.addEventListener('load', function () {
     // your code here
   });
-</script> -->
+</script>
   <!-- Feel free to remove these styles or customize in your own stylesheet 👍 -->
   <style>
     .attribution { font-size: 11px; text-align: center; }
@@ -33,7 +33,7 @@
           <div class="flex space-x-10">
             <div class="flex">
               <!--Hamburger Icon-->
-              <button id="menu-btn" class="block hamburger mt-1 lg:hidden">
+              <button id="menu-btn" class="block hamburger mt-1 md:hidden">
                 <img src="images/icon-menu.svg" alt="hamburger icon">
               </button>
               <!--Logo-->
@@ -44,7 +44,7 @@
               </div>
             </div>
             <!--Menu Items-->
-            <div class="hidden md:space-x-4 xl:space-x-9 lg:flex">
+            <div class="hidden md:space-x-4 xl:space-x-9 md:flex">
               <a href="#" class="text-grayishBlue lg:text-lg hover:text-veryDarkBlue">Collections</a>
               <a href="#" class="text-grayishBlue lg:text-lg hover:text-veryDarkBlue">Men</a>
               <a href="#" class="text-grayishBlue lg:text-lg hover:text-veryDarkBlue">Women</a>
@@ -53,7 +53,22 @@
             </div>
           </div>
           <div class="flex justify-around items-center w-20 h-5 lg:w-40 lg:h-full">
-            <a href="#">
+            <span id="cart-number" class="absolute hidden w-[1rem] h-[1rem] justify-center items-center right-[4rem] top-[1rem] lg:right-[8rem] lg:top-[2.5rem] text-[10px] rounded-full text-white bg-orange"></span>
+            <div id="cartEl" class="absolute hidden z-[1] flex-col justify-evenly w-[21rem] h-[15rem] top-[4rem] left-0 right-0 mx-auto lg:top-[7rem] lg:left-[69rem] bg-white shadow-2xl">
+              <span class="text-black font-bold border-b-2 pl-[1rem] pb-[1rem]">Cart</span>
+              <div class="flex items-center justify-between p-[1rem] space-x-1">
+                <img class="rounded-sm w-[3rem]" src="images/image-product-1-thumbnail.jpg" alt="product thumbnail">
+                <div class="text-sm">
+                  <p class="text-grayishBlue">Fall Limited Edition Sneakers</p>
+                  <p class="text-grayishBlue">$125.00 x 3 <b class="text-black">$375.00</b></p>
+                </div>
+                <img src="images/icon-delete.svg" alt="delete icon">
+              </div>
+              <div class="flex justify-center w-full">
+                <button class=" w-[19rem] h-[3rem] bg-orange rounded-md text-white">Checkout</button>
+              </div>
+            </div>
+            <a id="cart" href="#">
               <img src="images/icon-cart.svg" alt="cart icon">
             </a>
             <a href="#" class="">
@@ -62,7 +77,7 @@
           </div>
         </div>
         <!--Mobile Nav -->
-        <div class="lg:hidden">
+        <div class="md:hidden">
           <div id="menu" class="absolute z-10 flex-col w-2/3 h-screen right-40 space-y-10 bg-white hidden border-2 border-solid border-black shadow-lg">
             <button id="close-btn" class="ml-11 w-4">
               <img src="images/icon-close.svg" alt="close-icon">
@@ -99,61 +114,65 @@
           <div class="slide absolute">
             <img class="product-images md:rounded-lg md:w-[30rem]" src="images/image-product-4.jpg" alt="sneaker 4 image">
           </div>
-          <div class="lg:hidden justify-between">
+          <div class="md:hidden justify-between">
             <button
-              class="btn-prev absolute flex items-center justify-center top-[10rem] left-[1rem] w-[2rem] h-[2rem] rounded-full bg-white">
+              class="btn-prev absolute flex items-center justify-center top-[10rem] left-[1rem] w-[3rem] h-[3rem] rounded-full bg-white">
               <img class="h-fit" src="images/icon-previous.svg" alt="">
             </button>
             <button
-              class="btn-next absolute flex items-center justify-center top-[10rem] right-[1rem] w-[2rem] h-[2rem] rounded-full bg-white">
+              class="btn-next absolute flex items-center justify-center top-[10rem] right-[1rem] w-[3rem] h-[3rem] rounded-full bg-white">
               <img class="h-fit" src="images/icon-next.svg" alt="">
             </button>
           </div>
         </div>
 
         <!--Lightbox Container-->
-        <div id="lightBox">
-          <div class="flex flex-col">
-            <div>
-              <img id="current-lightbox-image" class="light-box-img rounded-lg" src="" alt="">
+        <div id="lightBox" class="hidden">
+          <div class="flex flex-col items-center w-full">
+            <div class="h-full">
+              <img id="current-lightbox-image" class="light-box-img rounded-lg lg:w-[32rem] xl:w-[32rem]" src="" alt="">
             </div>
-            
+            <div class="relative md:flex flex-row justify-evenly space-x-5 md:w-[25rem] lg:bottom-[2rem]">
+              <div class="h-[5rem]">
+                <a href="javascript:void(0)" class="lbt-link"
+                  onclick="changeImage('images/image-product-1.jpg', 'images/image-product-1.jpg')"><img
+                    class="w-[5rem] light-box-thumbnails thumbnail rounded-lg hover:border-2 hover:border-solid hover:border-orange hover:bg-black hover:opacity-75 active:bg-black active:opacity-50"
+                    src="images/image-product-1-thumbnail.jpg" alt=""></a>
+              </div>
+              <div class="h-[5rem]">
+                <a href="javascript:void(0)" class="lbt-link"
+                  onclick="changeImage('images/image-product-2.jpg', 'images/image-product-2.jpg')"><img
+                    class="w-[5rem] light-box-thumbnails thumbnail rounded-lg hover:border-2 hover:border-solid hover:border-orange hover:bg-black hover:opacity-75 active:bg-black active:opacity-50"
+                    src="images/image-product-2-thumbnail.jpg" alt=""></a>
+              </div>
+              <div class="h-[5rem]">
+                <a href="javascript:void(0)" class="lbt-link"
+                  onclick="changeImage('images/image-product-3.jpg', 'images/image-product-3.jpg')"><img
+                    class="w-[5rem] light-box-thumbnails thumbnail rounded-lg hover:border-2 hover:border-solid hover:border-orange hover:bg-black hover:opacity-75 active:bg-black active:opacity-50"
+                    src="images/image-product-3-thumbnail.jpg" alt=""></a>
+              </div>
+              <div class="h-[5rem]">
+                <a href="javascript:void(0)" class="lbt-link"
+                  onclick="changeImage('images/image-product-4.jpg', 'images/image-product-4.jpg')"><img
+                    class="w-[5rem] light-box-thumbnails thumbnail rounded-lg hover:border-2 hover:border-solid hover:border-orange hover:bg-black hover:opacity-75 active:bg-black active:opacity-50"
+                    src="images/image-product-4-thumbnail.jpg" alt=""></a>
+              </div>
+            </div>
           </div>
-          <button id="lbCloseBtn" class="light-box-close">
+          <button id="lbCloseBtn" class="lg:left-[62rem] lg:top-[6rem] light-box-close">
             <img class="filter-white" src="images/icon-close.svg" alt="close-icon">
           </button>
           <div class="justify-between">
             <button id="prev-btn"
-              class="btn-prev absolute flex items-center justify-center top-[23rem] left-[30rem] w-[2rem] h-[2rem] rounded-full bg-white">
+              class="btn-prev absolute flex items-center justify-center w-[3rem] h-[3rem] lg:top-[24rem] lg:left-[30rem] rounded-full bg-white">
               <img class="h-fit" src="images/icon-previous.svg" alt="">
             </button>
             <button  id="next-btn"
-              class="btn-next absolute flex items-center justify-center top-[23rem] right-[30rem] w-[2rem] h-[2rem] rounded-full bg-white">
+              class="btn-prev absolute flex items-center justify-center w-[3rem] h-[3rem]  lg:top-[24rem] lg:right-[30rem] rounded-full bg-white">
               <img class="h-fit" src="images/icon-next.svg" alt="">
             </button>
           </div>
-          <div class="relative top-[42rem] left-[33rem] md:flex flex-row justify-center space-x-5 md:w-[30rem]">
-            <div class="h-[5rem]">
-              <a href="javascript:void(0)" class="lbt-link" onclick="changeImage('images/image-product-1.jpg', 'images/image-product-1.jpg')"><img
-                  class="w-[5rem] light-box-thumbnails thumbnail rounded-lg hover:border-2 hover:border-solid hover:border-orange hover:bg-black hover:opacity-75 active:bg-black active:opacity-50"
-                  src="images/image-product-1-thumbnail.jpg" alt=""></a>
-            </div>
-            <div class="h-[5rem]">
-              <a href="javascript:void(0)" class="lbt-link" onclick="changeImage('images/image-product-2.jpg', 'images/image-product-2.jpg')"><img
-                  class="w-[5rem] light-box-thumbnails thumbnail rounded-lg hover:border-2 hover:border-solid hover:border-orange hover:bg-black hover:opacity-75 active:bg-black active:opacity-50"
-                  src="images/image-product-2-thumbnail.jpg" alt=""></a>
-            </div>
-            <div class="h-[5rem]">
-              <a href="javascript:void(0)" class="lbt-link" onclick="changeImage('images/image-product-3.jpg', 'images/image-product-3.jpg')"><img
-                  class="w-[5rem] light-box-thumbnails thumbnail rounded-lg hover:border-2 hover:border-solid hover:border-orange hover:bg-black hover:opacity-75 active:bg-black active:opacity-50"
-                  src="images/image-product-3-thumbnail.jpg" alt=""></a>
-            </div>
-            <div class="h-[5rem]">
-              <a href="javascript:void(0)" class="lbt-link" onclick="changeImage('images/image-product-4.jpg', 'images/image-product-4.jpg')"><img
-                  class="w-[5rem] light-box-thumbnails thumbnail rounded-lg hover:border-2 hover:border-solid hover:border-orange hover:bg-black hover:opacity-75 active:bg-black active:opacity-50"
-                  src="images/image-product-4-thumbnail.jpg" alt=""></a>
-            </div>
-          </div>
+          
         </div>
         
         <div class="relative md:flex flex-row mt-5 space-x-5 md:w-[30rem] mx-[3rem] hidden">
