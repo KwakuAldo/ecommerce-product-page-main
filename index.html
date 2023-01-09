@@ -27,7 +27,7 @@
   <main class="bg-white">
     <div class="container mx-auto">
       <!--Navbar-->
-      <nav class="relative flex p-5 w-full mt-2 border-b-2 lg:h-28 lg:mt-5">
+      <nav class="relative flex p-5 w-full h-[62px] mt-2 border-b-2 lg:h-28 lg:mt-5">
         <div class="flex justify-between lg:items-center w-full">
           
           <div class="flex space-x-10">
@@ -54,19 +54,20 @@
           </div>
           <div class="flex justify-around items-center w-20 h-5 lg:w-40 lg:h-full">
             <span id="cart-number" class="absolute hidden w-[1rem] h-[1rem] justify-center items-center right-[4rem] top-[1rem] lg:right-[8rem] lg:top-[2.5rem] text-[10px] rounded-full text-white bg-orange"></span>
-            <div id="cartEl" class="absolute hidden z-[1] flex-col justify-evenly w-[21rem] h-[15rem] top-[4rem] left-0 right-0 mx-auto lg:top-[7rem] lg:left-[69rem] bg-white shadow-2xl">
+            <div id="cartEl" class="absolute hidden z-[1] flex-col justify-evenly w-[21rem] h-[15rem] top-[4rem] left-0 right-0 mx-auto lg:top-[7rem] lg:left-[69rem] bg-white rounded-md shadow-2xl">
               <span class="text-black font-bold border-b-2 pl-[1rem] pb-[1rem]">Cart</span>
-              <div class="flex items-center justify-between p-[1rem] space-x-1">
+              <div id="hide-when-cart-empty-1" class="hidden items-center justify-between p-[1rem] space-x-1">
                 <img class="rounded-sm w-[3rem]" src="images/image-product-1-thumbnail.jpg" alt="product thumbnail">
                 <div class="text-sm">
                   <p class="text-grayishBlue">Fall Limited Edition Sneakers</p>
-                  <p class="text-grayishBlue">$125.00 x 3 <b class="text-black">$375.00</b></p>
+                  <p id="price-calc" class="text-grayishBlue">$125.00 x <span id="qty-counter"></span>   <b id="total-price" class="text-black"></b> </p>
                 </div>
                 <img src="images/icon-delete.svg" alt="delete icon">
               </div>
-              <div class="flex justify-center w-full">
-                <button class=" w-[19rem] h-[3rem] bg-orange rounded-md text-white">Checkout</button>
+              <div id="hide-when-cart-empty-2" class="hidden justify-center w-full">
+                <button class="w-[19rem] h-[3rem] bg-orange rounded-md text-white">Checkout</button>
               </div>
+              <p id="cart-empty" class="absolute hidden text-sm text-grayishBlue"></p>
             </div>
             <a id="cart" href="#">
               <img src="images/icon-cart.svg" alt="cart icon">
@@ -77,12 +78,12 @@
           </div>
         </div>
         <!--Mobile Nav -->
-        <div class="md:hidden">
-          <div id="menu" class="absolute z-10 flex-col w-2/3 h-screen right-40 space-y-10 bg-white hidden border-2 border-solid border-black shadow-lg">
-            <button id="close-btn" class="ml-11 w-4">
+        <div id="menu" class="md:hidden absolute top-0 bottom-0 left-0 right-0 h-screen z-[1] flex-col w-2/3 space-y-10 bg-white hidden shadow-black shadow-xl shadow-opacity-75">
+          <div  class="">
+            <button id="close-btn" class="absolute ml-[1.25rem] top-[1.5rem] w-4">
               <img src="images/icon-close.svg" alt="close-icon">
             </button>
-            <div class="flex flex-col ml-10 space-y-5">
+            <div class="flex flex-col mt-[7rem] p-[1.25rem] space-y-5">
               <a href="#" class="font-bold">Collections</a>
               <a href="#" class="font-bold">Men</a>
               <a href="#" class="font-bold">Women</a>
@@ -91,7 +92,6 @@
             </div>
             <!--Hamburger Menu-->
           </div>
-          
         </div>
       
       </nav>
@@ -132,43 +132,43 @@
             <div class="h-full">
               <img id="current-lightbox-image" class="light-box-img rounded-lg lg:w-[32rem] xl:w-[32rem]" src="" alt="">
             </div>
-            <div class="relative md:flex flex-row justify-evenly space-x-5 md:w-[25rem] lg:bottom-[2rem]">
+            <div class="relative md:flex flex-row justify-evenly space-x-5 md:w-[25rem] bottom-[3rem] lg:bottom-[2rem] ">
               <div class="h-[5rem]">
                 <a href="javascript:void(0)" class="lbt-link"
-                  onclick="changeImage('images/image-product-1.jpg', 'images/image-product-1.jpg')"><img
+                  onclick="currentImage=0; updateImage()"><img
                     class="w-[5rem] light-box-thumbnails thumbnail rounded-lg hover:border-2 hover:border-solid hover:border-orange hover:bg-black hover:opacity-75 active:bg-black active:opacity-50"
                     src="images/image-product-1-thumbnail.jpg" alt=""></a>
               </div>
               <div class="h-[5rem]">
                 <a href="javascript:void(0)" class="lbt-link"
-                  onclick="changeImage('images/image-product-2.jpg', 'images/image-product-2.jpg')"><img
+                  onclick="currentImage=1; updateImage()"><img
                     class="w-[5rem] light-box-thumbnails thumbnail rounded-lg hover:border-2 hover:border-solid hover:border-orange hover:bg-black hover:opacity-75 active:bg-black active:opacity-50"
                     src="images/image-product-2-thumbnail.jpg" alt=""></a>
               </div>
               <div class="h-[5rem]">
                 <a href="javascript:void(0)" class="lbt-link"
-                  onclick="changeImage('images/image-product-3.jpg', 'images/image-product-3.jpg')"><img
+                  onclick="currentImage=2; updateImage()"><img
                     class="w-[5rem] light-box-thumbnails thumbnail rounded-lg hover:border-2 hover:border-solid hover:border-orange hover:bg-black hover:opacity-75 active:bg-black active:opacity-50"
                     src="images/image-product-3-thumbnail.jpg" alt=""></a>
               </div>
               <div class="h-[5rem]">
                 <a href="javascript:void(0)" class="lbt-link"
-                  onclick="changeImage('images/image-product-4.jpg', 'images/image-product-4.jpg')"><img
+                  onclick="currentImage=3; updateImage()"><img
                     class="w-[5rem] light-box-thumbnails thumbnail rounded-lg hover:border-2 hover:border-solid hover:border-orange hover:bg-black hover:opacity-75 active:bg-black active:opacity-50"
                     src="images/image-product-4-thumbnail.jpg" alt=""></a>
               </div>
             </div>
           </div>
-          <button id="lbCloseBtn" class="lg:left-[62rem] lg:top-[6rem] light-box-close">
+          <button id="lbCloseBtn" class="left-[50rem] top-[8rem] lg:left-[62rem] lg:top-[6rem] light-box-close">
             <img class="filter-white" src="images/icon-close.svg" alt="close-icon">
           </button>
           <div class="justify-between">
             <button id="prev-btn"
-              class="btn-prev absolute flex items-center justify-center w-[3rem] h-[3rem] lg:top-[24rem] lg:left-[30rem] rounded-full bg-white">
+              class="btn-prev absolute flex items-center justify-center w-[3rem] h-[3rem] top-[28rem] left-[11rem] lg:top-[24rem] lg:left-[30rem] rounded-full bg-white">
               <img class="h-fit" src="images/icon-previous.svg" alt="">
             </button>
             <button  id="next-btn"
-              class="btn-prev absolute flex items-center justify-center w-[3rem] h-[3rem]  lg:top-[24rem] lg:right-[30rem] rounded-full bg-white">
+              class="btn-prev absolute flex items-center justify-center w-[3rem] h-[3rem] top-[28rem] right-[11rem] lg:top-[24rem] lg:right-[30rem] rounded-full bg-white">
               <img class="h-fit" src="images/icon-next.svg" alt="">
             </button>
           </div>
@@ -205,7 +205,7 @@
               <div class="flex justify-between my-[2rem]">
                 <div class="flex lg:flex-col w-full justify-between items-center lg:items-start">
                   <div class="flex justify-between items-center space-x-5">
-                    <h3 class="text-veryDarkBlue text-4xl font-bold">$125.00</h3>
+                    <h3 id="price" class="text-veryDarkBlue text-4xl font-bold">$125.00</h3>
                     <p class="bg-paleOrange text-xl font-bold text-center text-orange w-[3.4375rem] h-8 block rounded">50%</p>
                   </div>
                   <h3 class="text-darkGrayishBlue text-lg line-through font-bold">$250.00</h3>

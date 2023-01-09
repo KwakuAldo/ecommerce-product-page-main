@@ -5,6 +5,7 @@ const addBtn = document.getElementById('add-btn');
 const removeBtn = document.getElementById('remove-btn');
 const cart = document.getElementById('cart');
 const cartElement = document.getElementById('cartEl')
+const emptyCartMsg = document.getElementById('cart-empty');
 const cartBtn = document.getElementById('cart-btn');
 let itemQty = document.getElementById('item-quantity');
 let count = 0;
@@ -17,11 +18,22 @@ const lightBox = document.querySelector('#lightBox')
 const lightBoxSlides = document.querySelectorAll('.slide img')
 const lightboxImage = lightBox.querySelector("img");
 const lightBoxBtnClose = lightBox.querySelector('.light-box-close')
+let lightBoxOpen = false
 const thumbNail = document.querySelectorAll('.thumbnail img')
 let cartNumber = document.getElementById('cart-number');
 let itemCount = document.getElementById('item-quantity');
-// const imageEl = Array.from(document.querySelectorAll('.product-images'))
-// let currentImageIndex = 0;
+let price = 125
+let totalPrice = document.getElementById('total-price');
+let qtyCounter = document.getElementById('qty-counter');
+const cartContent1 = document.getElementById('hide-when-cart-empty-1')
+const cartContent2 = document.getElementById('hide-when-cart-empty-2')
+let currentImage = 0;
+const imageUrls = [
+    'images/image-product-1.jpg',
+    'images/image-product-2.jpg',
+    'images/image-product-3.jpg',
+    'images/image-product-4.jpg'
+];
 // const lightBoxImageElement = document.querySelector('.light-box-img img')
 // const prevBtn = document.querySelector('#prev-btn')
 // const nextBtn = document.querySelector('#next-btn')
@@ -51,6 +63,14 @@ menuBtn.addEventListener('click', () => {
     console.log("clicked menuBtn")
 })
 
+// Listen for a click on the document (anywhere on the page)
+document.addEventListener('click', event => {
+    // If the click was not on the menuBtn or the nav element, hide the nav element
+    if (!menuBtn.contains(event.target) && !nav.contains(event.target)) {
+        nav.classList.add('hidden');
+    }
+});
+
 closeBtn.addEventListener('click', () => {
     nav.classList.toggle('hidden')
     console.log("clicked closeBtn")
@@ -73,15 +93,10 @@ removeBtn.addEventListener('click', () => {
     
 })
 
-cart.addEventListener('click', () => {
-    cartElement.classList.toggle('flex')
-})
-
 // Add to cart 
 let toggle = false;
 cartBtn.addEventListener('click', () => {
-    console.log(cartNumber.innerText)
-    cartNumber.innerText = itemCount.innerHTML
+    cartNumber.innerText = itemCount.innerText
     count = 0
     itemCount.innerText = 0
     if (!toggle) {
@@ -89,6 +104,37 @@ cartBtn.addEventListener('click', () => {
         toggle = true;
     }
     console.log('added to cart');
+});
+
+cart.addEventListener('click', () => {
+    console.log(cartElement.style);
+    if (parseInt(cartNumber.innerText) === 0 || cartNumber.innerText === '') {
+        emptyCartMsg.innerText = "Your Cart is empty."
+        emptyCartMsg.classList.remove('hidden')
+        cartElement.classList.remove('justify-evenly')
+        console.log('Your Cart is empty.')
+    } else {
+        cartContent1.style.display = 'flex';
+        cartContent2.style.display = 'flex';
+        emptyCartMsg.classList.add('hidden')
+    }
+    cartElement.classList.toggle('flex')
+
+    qtyCounter.innerText = cartNumber.innerText
+    totalPrice.innerText = price * qtyCounter.innerText
+    let formattedTotalPrice = "$" + totalPrice.innerText
+    totalPrice.innerText = formattedTotalPrice
+    // function formatPrice(totalPrice) {
+    //     return "$" + totalPrice.innerText
+    // }
+})
+
+// Listen for a click on the document (anywhere on the page)
+document.addEventListener('click', event => {
+    // If the click was not on the cart element, hide it
+    if (!cart.contains(event.target)) {
+        cartElement.classList.remove('flex');
+    }
 });
 
 // if (window.matchMedia("(min-width: 768px)").matches) {
@@ -128,17 +174,38 @@ nextSlide.addEventListener('click', function () {
 function showLightbox(event) {
     lightboxImage.src = event.target.src;
     lightBox.classList.toggle("show");
+    lightBoxOpen = true
     // btnPrev.style.display = "flex";
     // btnNext.style.display = "flex";
 }
 
+//slideshow for lightbox
+document.getElementById('current-lightbox-image').src = currentImage
+//updates image based on current image index
+function updateImage() {
+    document.getElementById('current-lightbox-image').src = imageUrls[currentImage]
+}
+// Next and previous buttons for the lightbox
+document.getElementById('prev-btn').addEventListener('click', function () {
+    currentImage = (currentImage + imageUrls.length - 1) % imageUrls.length;
+    updateImage();
+});
+
+document.getElementById('next-btn').addEventListener('click', function () {
+    currentImage = (currentImage + 1) % imageUrls.length;
+    updateImage();
+});
+
+
+
 // hide lightbox when close button is clicked
 function hideLightbox() {
     lightBox.classList.toggle("show");
+    lightBoxOpen = false;
 }
 
 slides.forEach(slide => slide.addEventListener("click", showLightbox));
-thumbNail.forEach(thumbnail => thumbnail.addEventListener("click", showLightbox));
+// thumbNail.forEach(thumbnail => thumbnail.addEventListener("click", showLightbox));
 lightBoxBtnClose.addEventListener("click", hideLightbox);
 
 if (window.innerWidth >= 768){
@@ -148,5 +215,7 @@ if (window.innerWidth >= 768){
 // Thumbnail opens original image when clicked
 function changeImage(imageUrl) {
     document.getElementById('current-image').src = imageUrl
-    document.getElementById('current-lightbox-image').src = imageUrl
+    if (lightBoxOpen) {
+        
+    }
 }
