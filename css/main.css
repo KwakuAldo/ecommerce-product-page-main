@@ -613,16 +613,16 @@ video {
   right: 1rem;
 }
 
+.bottom-\[3rem\] {
+  bottom: 3rem;
+}
+
 .left-\[50rem\] {
   left: 50rem;
 }
 
 .top-\[8rem\] {
   top: 8rem;
-}
-
-.bottom-\[3rem\] {
-  bottom: 3rem;
 }
 
 .top-\[28rem\] {
@@ -1404,10 +1404,6 @@ video {
 }
 
 @media (min-width: 1440px) {
-  .xl\:bottom-\[8rem\] {
-    bottom: 8rem;
-  }
-
   .xl\:w-\[32rem\] {
     width: 32rem;
   }

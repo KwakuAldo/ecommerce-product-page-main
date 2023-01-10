@@ -88,10 +88,10 @@ cart.addEventListener('click', () => {
         emptyCartMsg.innerText = "Your Cart is empty."
         emptyCartMsg.classList.remove('hidden')
         cartElement.classList.remove('justify-evenly')
-        console.log('Your Cart is empty.')
     } else {
-        cartContent1.style.display = 'flex';
-        cartContent2.style.display = 'flex';
+        cartElement.classList.add('justify-center')
+        cartContent1.classList.add('flex')
+        cartContent2.classList.add('flex')
         emptyCartMsg.classList.add('hidden')
     }
     cartElement.classList.toggle('flex')
@@ -100,15 +100,21 @@ cart.addEventListener('click', () => {
     totalPrice.innerText = price * qtyCounter.innerText
     let formattedTotalPrice = "$" + totalPrice.innerText
     totalPrice.innerText = formattedTotalPrice
-    // function formatPrice(totalPrice) {
-    //     return "$" + totalPrice.innerText
-    // }
+})
+
+// Clears cart content on click
+clearCart.addEventListener('click', () => {
+    cartContent1.classList.remove('flex')
+    cartContent2.classList.remove('flex')
+    emptyCartMsg.classList.add('block')
+    cartElement.classList.remove('justify-evenly')
+    cartNumber.innerText = 0
 })
 
 // Listen for a click on the document (anywhere on the page)
 document.addEventListener('click', event => {
     // If the click was not on the cart element, hide it
-    if (!cart.contains(event.target)) {
+    if (!cart.contains(event.target) && !cartElement.contains(event.target)) {
         cartElement.classList.remove('flex');
     }
 });
@@ -184,6 +190,5 @@ if (window.innerWidth >= 768){
 function changeImage(imageUrl) {
     document.getElementById('current-image').src = imageUrl
     if (lightBoxOpen) {
-        
     }
 }
