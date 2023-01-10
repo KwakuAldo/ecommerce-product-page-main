@@ -7,6 +7,7 @@ const cart = document.getElementById('cart');
 const cartElement = document.getElementById('cartEl')
 const emptyCartMsg = document.getElementById('cart-empty');
 const cartBtn = document.getElementById('cart-btn');
+const clearCart = document.getElementById('clear-cart');
 let itemQty = document.getElementById('item-quantity');
 let count = 0;
 const slides = document.querySelectorAll('.slide')
@@ -34,33 +35,9 @@ const imageUrls = [
     'images/image-product-3.jpg',
     'images/image-product-4.jpg'
 ];
-// const lightBoxImageElement = document.querySelector('.light-box-img img')
-// const prevBtn = document.querySelector('#prev-btn')
-// const nextBtn = document.querySelector('#next-btn')
-
-// const buttonContainer = document.querySelector('.visible');
-
-//Lightbox slideshow
-// prevBtn.addEventListener('click', () => {
-//     currentImageIndex--;
-//     if (currentImageIndex < 0) {
-//         currentImageIndex = imageEl.length - 1;
-//     }
-//     lightBoxImageElement.src = imageEl[currentImageIndex].src;
-// });
-
-// nextBtn.addEventListener('click', () => {
-//     currentImageIndex++;
-//     if (currentImageIndex >= imageEl.length) {
-//         currentImageIndex = 0;
-//     }
-//     lightBoxImageElement.src = imageEl[currentImageIndex].src;
-// });
-
 
 menuBtn.addEventListener('click', () => {
     nav.classList.toggle('hidden');
-    console.log("clicked menuBtn")
 })
 
 // Listen for a click on the document (anywhere on the page)
@@ -73,15 +50,15 @@ document.addEventListener('click', event => {
 
 closeBtn.addEventListener('click', () => {
     nav.classList.toggle('hidden')
-    console.log("clicked closeBtn")
 })
 
+//Item quantity counter increment
 addBtn.addEventListener('click', () => {
     count += 1;
     itemQty.innerText = count;
-    console.log('plus 1')
 })
 
+//Item quantity counter decrement
 removeBtn.addEventListener('click', () => {
     count -= 1;
     /* To prevent the counter from going below zero */
@@ -106,6 +83,7 @@ cartBtn.addEventListener('click', () => {
     console.log('added to cart');
 });
 
+// Opens cart content on click
 cart.addEventListener('click', () => {
     console.log(cartElement.style);
     if (parseInt(cartNumber.innerText) === 0 || cartNumber.innerText === '') {
@@ -137,10 +115,7 @@ document.addEventListener('click', event => {
     }
 });
 
-// if (window.matchMedia("(min-width: 768px)").matches) {
-//     cartNumber.classList.add("visible");
-// }
-
+// Slideshow for the product
 slides.forEach((slider, indx) => {
     slider.style.transform = `translateX(${indx * 100}%)`
 })
@@ -151,7 +126,6 @@ prevSlide.addEventListener('click', function () {
     } else {
         curSlide--
     }
-    console.log('previous')
     slides.forEach((slider, indx) => {
         slider.style.transform = `translateX(${100 * (indx - curSlide)}%)`
     })
@@ -163,7 +137,6 @@ nextSlide.addEventListener('click', function () {
     } else {
         curSlide++
     }
-    console.log('next')
     slides.forEach((slider, indx) => {
         slider.style.transform = `translateX(${100 * (indx - curSlide)}%)`
     })
@@ -196,8 +169,6 @@ document.getElementById('next-btn').addEventListener('click', function () {
     updateImage();
 });
 
-
-
 // hide lightbox when close button is clicked
 function hideLightbox() {
     lightBox.classList.toggle("show");
@@ -208,6 +179,7 @@ slides.forEach(slide => slide.addEventListener("click", showLightbox));
 // thumbNail.forEach(thumbnail => thumbnail.addEventListener("click", showLightbox));
 lightBoxBtnClose.addEventListener("click", hideLightbox);
 
+// Deactivate the lightbox on small screens
 if (window.innerWidth >= 768){
     showLightbox();
 }
