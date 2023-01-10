@@ -80,12 +80,10 @@ cartBtn.addEventListener('click', () => {
         cartNumber.classList.add("flex");
         toggle = true;
     }
-    console.log('added to cart');
 });
 
 // Opens cart content on click
 cart.addEventListener('click', () => {
-    console.log(cartElement.style);
     if (parseInt(cartNumber.innerText) === 0 || cartNumber.innerText === '') {
         emptyCartMsg.innerText = "Your Cart is empty."
         emptyCartMsg.classList.remove('hidden')
@@ -148,8 +146,6 @@ function showLightbox(event) {
     lightboxImage.src = event.target.src;
     lightBox.classList.toggle("show");
     lightBoxOpen = true
-    // btnPrev.style.display = "flex";
-    // btnNext.style.display = "flex";
 }
 
 //slideshow for lightbox
