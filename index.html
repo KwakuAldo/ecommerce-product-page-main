@@ -60,7 +60,7 @@
                 <img class="rounded-sm w-[3rem]" src="images/image-product-1-thumbnail.jpg" alt="product thumbnail">
                 <div class="text-sm">
                   <p class="text-grayishBlue">Fall Limited Edition Sneakers</p>
-                  <p id="price-calc" class="text-grayishBlue">$125.00 x <span id="qty-counter"></span>   <b id="total-price" class="text-black"></b> </p>
+                  <p id="price-calc" class="text-grayishBlue">$125.00 x <span id="qty-multiplier"></span>   <b id="total-price" class="text-black"></b> </p>
                 </div>
                 <button id="clear-cart">
                   <img src="images/icon-delete.svg" alt="delete icon">
@@ -132,9 +132,9 @@
         <div id="lightBox" class="hidden">
           <div class="flex flex-col items-center w-full">
             <div class="h-full">
-              <img id="current-lightbox-image" class="light-box-img rounded-lg lg:w-[32rem] xl:w-[32rem]" src="" alt="">
+              <img id="current-lightbox-image" class="light-box-img rounded-lg" src="" alt="">
             </div>
-            <div class="relative md:flex flex-row justify-evenly space-x-5 md:w-[25rem] bottom-[3rem] lg:bottom-[2rem] ">
+            <div class="relative md:flex flex-row justify-evenly space-x-5 md:w-[25rem] bottom-[1rem]">
               <div class="h-[5rem]">
                 <a href="javascript:void(0)" class="lbt-link"
                   onclick="currentImage=0; updateImage()"><img
@@ -161,16 +161,16 @@
               </div>
             </div>
           </div>
-          <button id="lbCloseBtn" class="left-[50rem] top-[8rem] lg:left-[62rem] lg:top-[6rem] light-box-close">
+          <button id="lbCloseBtn" class=" md:left-[45rem] md:top-[5rem] lg:left-[50rem] xl:left-[58rem] light-box-close">
             <img class="filter-white" src="images/icon-close.svg" alt="close-icon">
           </button>
           <div class="justify-between">
             <button id="prev-btn"
-              class="btn-prev absolute flex items-center justify-center w-[3rem] h-[3rem] top-[28rem] left-[11rem] lg:top-[24rem] lg:left-[30rem] rounded-full bg-white">
+              class="btn-prev absolute flex items-center justify-center w-[3rem] h-[3rem] md:top-[21rem] md:left-[17rem] lg:left-[22rem] xl:left-[29rem] rounded-full bg-white">
               <img class="h-fit" src="images/icon-previous.svg" alt="">
             </button>
             <button  id="next-btn"
-              class="btn-prev absolute flex items-center justify-center w-[3rem] h-[3rem] top-[28rem] right-[11rem] lg:top-[24rem] lg:right-[30rem] rounded-full bg-white">
+              class="btn-prev absolute flex items-center justify-center w-[3rem] h-[3rem] md:top-[21rem] md:right-[17rem] lg:right-[22rem] xl:right-[29rem] rounded-full bg-white">
               <img class="h-fit" src="images/icon-next.svg" alt="">
             </button>
           </div>

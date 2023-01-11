@@ -581,16 +581,20 @@ video {
   top: 1rem;
 }
 
+.top-\[4rem\] {
+  top: 4rem;
+}
+
+.left-0 {
+  left: 0px;
+}
+
 .top-0 {
   top: 0px;
 }
 
 .bottom-0 {
   bottom: 0px;
-}
-
-.left-0 {
-  left: 0px;
 }
 
 .top-\[1\.5rem\] {
@@ -633,8 +637,32 @@ video {
   right: 11rem;
 }
 
-.top-\[4rem\] {
-  top: 4rem;
+.top-\[5rem\] {
+  top: 5rem;
+}
+
+.left-\[48rem\] {
+  left: 48rem;
+}
+
+.top-\[21rem\] {
+  top: 21rem;
+}
+
+.left-\[19rem\] {
+  left: 19rem;
+}
+
+.right-\[19rem\] {
+  right: 19rem;
+}
+
+.bottom-\[1rem\] {
+  bottom: 1rem;
+}
+
+.left-\[45rem\] {
+  left: 45rem;
 }
 
 .z-\[1\] {
@@ -1170,10 +1198,6 @@ video {
 }
 
 @media (min-width: 767px) {
-  .sm\:left-0 {
-    left: 0px;
-  }
-
   .sm\:overflow-hidden {
     overflow: hidden;
   }
@@ -1188,16 +1212,8 @@ video {
     position: static;
   }
 
-  .md\:top-\[4rem\] {
-    top: 4rem;
-  }
-
-  .md\:left-0 {
-    left: 0px;
-  }
-
-  .md\:right-0 {
-    right: 0px;
+  .md\:left-\[43rem\] {
+    left: 43rem;
   }
 
   .md\:top-auto {
@@ -1208,17 +1224,44 @@ video {
     top: 10rem;
   }
 
-  .md\:left-\[43rem\] {
-    left: 43rem;
+  .md\:top-\[21rem\] {
+    top: 21rem;
+  }
+
+  .md\:left-\[22rem\] {
+    left: 22rem;
+  }
+
+  .md\:right-\[22rem\] {
+    right: 22rem;
+  }
+
+  .md\:left-\[50rem\] {
+    left: 50rem;
+  }
+
+  .md\:top-\[5rem\] {
+    top: 5rem;
+  }
+
+  .md\:left-\[48rem\] {
+    left: 48rem;
+  }
+
+  .md\:left-\[45rem\] {
+    left: 45rem;
+  }
+
+  .md\:left-\[17rem\] {
+    left: 17rem;
+  }
+
+  .md\:right-\[17rem\] {
+    right: 17rem;
   }
 
   .md\:m-0 {
     margin: 0px;
-  }
-
-  .md\:mx-auto {
-    margin-left: auto;
-    margin-right: auto;
   }
 
   .md\:mx-\[3rem\] {
@@ -1310,8 +1353,8 @@ video {
     top: 7rem;
   }
 
-  .lg\:left-\[69rem\] {
-    left: 69rem;
+  .lg\:left-\[54rem\] {
+    left: 54rem;
   }
 
   .lg\:bottom-\[2rem\] {
@@ -1338,8 +1381,24 @@ video {
     right: 30rem;
   }
 
-  .lg\:left-\[54rem\] {
-    left: 54rem;
+  .lg\:left-\[48rem\] {
+    left: 48rem;
+  }
+
+  .lg\:top-\[50rem\] {
+    top: 50rem;
+  }
+
+  .lg\:left-\[50rem\] {
+    left: 50rem;
+  }
+
+  .lg\:left-\[22rem\] {
+    left: 22rem;
+  }
+
+  .lg\:right-\[22rem\] {
+    right: 22rem;
   }
 
   .lg\:mt-5 {
@@ -1439,6 +1498,18 @@ video {
 @media (min-width: 1440px) {
   .xl\:left-\[69rem\] {
     left: 69rem;
+  }
+
+  .xl\:left-\[29rem\] {
+    left: 29rem;
+  }
+
+  .xl\:right-\[29rem\] {
+    right: 29rem;
+  }
+
+  .xl\:left-\[58rem\] {
+    left: 58rem;
   }
 
   .xl\:w-\[32rem\] {

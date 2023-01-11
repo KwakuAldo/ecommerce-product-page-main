@@ -25,7 +25,7 @@ let cartNumber = document.getElementById('cart-number');
 let itemCount = document.getElementById('item-quantity');
 let price = 125
 let totalPrice = document.getElementById('total-price');
-let qtyCounter = document.getElementById('qty-counter');
+let qtyCounter = document.getElementById('qty-multiplier');
 const cartContent1 = document.getElementById('hide-when-cart-empty-1')
 const cartContent2 = document.getElementById('hide-when-cart-empty-2')
 let currentImage = 0;
@@ -108,7 +108,7 @@ clearCart.addEventListener('click', () => {
     cartContent2.classList.remove('flex')
     emptyCartMsg.classList.add('block')
     cartElement.classList.remove('justify-evenly')
-    cartNumber.innerText = 0
+    cartNumber.classList.remove('flex')
 })
 
 // Listen for a click on the document (anywhere on the page)
